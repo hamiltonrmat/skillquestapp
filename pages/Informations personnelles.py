@@ -3,8 +3,8 @@ import streamlit as st
 
 st.title('Informations personelles')
 
-liste_gen = pd.read_excel("liste_gen.xlsx")[['prénom', 'NOM', 'clé', 'mail']]
-liste_ml = pd.read_excel("liste_ml.xlsx")[['prénom', 'NOM', 'clé', 'mail']]
+liste_gen = pd.read_excel('https://github.com/hamiltonrmat/skillquestapp/raw/refs/heads/main/liste_gen.xlsx')[['prénom', 'NOM', 'clé', 'mail']]
+liste_ml = pd.read_excel('https://github.com/hamiltonrmat/skillquestapp/raw/refs/heads/main/liste_ml.xlsx')[['prénom', 'NOM', 'clé', 'mail']]
 
 cles = pd.DataFrame(liste_gen['clé'])
 cles = liste_gen.dropna()
