@@ -2,9 +2,9 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 
-liste_gen = pd.read_excel('liste_gen.xlsx')[['prénom', 'NOM', 'clé', 'mail']]
-liste_ml = pd.read_excel('liste_ml.xlsx')[['prénom', 'NOM', 'clé', 'mail']]
-edl = pd.read_excel('edl_maths_skq.xlsx')
+liste_gen = pd.read_excel('https://github.com/hamiltonrmat/skillquestapp/raw/refs/heads/main/liste_gen.xlsx')[['prénom', 'NOM', 'clé', 'mail']]
+liste_ml = pd.read_excel('https://github.com/hamiltonrmat/skillquestapp/raw/refs/heads/main/liste_ml.xlsx')[['prénom', 'NOM', 'clé', 'mail']]
+edl = pd.read_excel('https://github.com/hamiltonrmat/skillquestapp/raw/refs/heads/main/edl_maths_skq.xlsx')
 file = pd.ExcelFile("edl_maths_skq.xlsx") 
 tables_edl = file.sheet_names
 
@@ -12,37 +12,37 @@ tables_edl = file.sheet_names
 ######## Maths du Lycée
 ###########
 
-exam1_ml = pd.read_excel('edl_maths_skq.xlsx', sheet_name=tables_edl[0])
+exam1_ml = pd.read_excel('https://github.com/hamiltonrmat/skillquestapp/raw/refs/heads/main/edl_maths_skq.xlsx', sheet_name=tables_edl[0])
 exam1_ml = exam1_ml[['Clé', 'Note/20,00']]
 exam1_ml.columns = ['clé', 'note']
 exam1_ml = exam1_ml.groupby(['clé']).max().reset_index()
 
-exam2_ml = pd.read_excel('edl_maths_skq.xlsx', sheet_name=tables_edl[1])
+exam2_ml = pd.read_excel('https://github.com/hamiltonrmat/skillquestapp/raw/refs/heads/main/edl_maths_skq.xlsx', sheet_name=tables_edl[1])
 exam2_ml = exam2_ml[['Clé', 'Note/20,00']]
 exam2_ml.columns = ['clé', 'note']
 exam2_ml = exam2_ml.groupby(['clé']).max().reset_index()
 
-exam3_ml = pd.read_excel('edl_maths_skq.xlsx', sheet_name=tables_edl[2])
+exam3_ml = pd.read_excel('https://github.com/hamiltonrmat/skillquestapp/raw/refs/heads/main/edl_maths_skq.xlsx', sheet_name=tables_edl[2])
 exam3_ml = exam3_ml[['Clé', 'Note/20,00']]
 exam3_ml.columns = ['clé', 'note']
 exam3_ml = exam3_ml.groupby(['clé']).max().reset_index()
 
-exam4_ml = pd.read_excel('edl_maths_skq.xlsx', sheet_name=tables_edl[3])
+exam4_ml = pd.read_excel('https://github.com/hamiltonrmat/skillquestapp/raw/refs/heads/main/edl_maths_skq.xlsx', sheet_name=tables_edl[3])
 exam4_ml = exam4_ml[['Clé', 'Note/20,00']]
 exam4_ml.columns = ['clé', 'note']
 exam4_ml = exam4_ml.groupby(['clé']).max().reset_index()
 
-exam5_ml = pd.read_excel('edl_maths_skq.xlsx', sheet_name=tables_edl[4])
+exam5_ml = pd.read_excel('https://github.com/hamiltonrmat/skillquestapp/raw/refs/heads/main/edl_maths_skq.xlsx', sheet_name=tables_edl[4])
 exam5_ml = exam5_ml[['Clé', 'Note/20,00']]
 exam5_ml.columns = ['clé', 'note']
 exam5_ml = exam5_ml.groupby(['clé']).max().reset_index()
 
-exam6_ml = pd.read_excel('edl_maths_skq.xlsx', sheet_name=tables_edl[5])
+exam6_ml = pd.read_excel('https://github.com/hamiltonrmat/skillquestapp/raw/refs/heads/main/edl_maths_skq.xlsx', sheet_name=tables_edl[5])
 exam6_ml = exam6_ml[['Clé', 'Note/20,00']]
 exam6_ml.columns = ['clé', 'note']
 exam6_ml = exam6_ml.groupby(['clé']).max().reset_index()
 
-exam7_ml = pd.read_excel('edl_maths_skq.xlsx', sheet_name=tables_edl[6])
+exam7_ml = pd.read_excel('https://github.com/hamiltonrmat/skillquestapp/raw/refs/heads/main/edl_maths_skq.xlsx', sheet_name=tables_edl[6])
 exam7_ml = exam7_ml[['Clé', 'Note/20,00']]
 exam7_ml.columns = ['clé', 'note']
 exam7_ml = exam7_ml.groupby(['clé']).max().reset_index()
@@ -80,22 +80,22 @@ ml['validation'] = validations_ml
 ##################
 
 
-exam1_fr = pd.read_excel('edl_maths_skq.xlsx', sheet_name=tables_edl[7])
+exam1_fr = pd.read_excel('https://github.com/hamiltonrmat/skillquestapp/raw/refs/heads/main/edl_maths_skq.xlsx', sheet_name=tables_edl[7])
 exam1_fr = exam1_fr[['Clé', 'Note/20,00']]
 exam1_fr.columns = ['clé', 'note']
 exam1_fr = exam1_fr.groupby(['clé']).max().reset_index()
 
-exam2_fr = pd.read_excel('edl_maths_skq.xlsx', sheet_name=tables_edl[8])
+exam2_fr = pd.read_excel('https://github.com/hamiltonrmat/skillquestapp/raw/refs/heads/main/edl_maths_skq.xlsx', sheet_name=tables_edl[8])
 exam2_fr = exam2_fr[['Clé', 'Note/20,00']]
 exam2_fr.columns = ['clé', 'note']
 exam2_fr = exam2_fr.groupby(['clé']).max().reset_index()
 
-exam3_fr = pd.read_excel('edl_maths_skq.xlsx', sheet_name=tables_edl[9])
+exam3_fr = pd.read_excel('https://github.com/hamiltonrmat/skillquestapp/raw/refs/heads/main/edl_maths_skq.xlsx', sheet_name=tables_edl[9])
 exam3_fr = exam3_fr[['Clé', 'Note/20,00']]
 exam3_fr.columns = ['clé', 'note']
 exam3_fr = exam3_fr.groupby(['clé']).max().reset_index()
 
-exam4_fr = pd.read_excel('edl_maths_skq.xlsx', sheet_name=tables_edl[10])
+exam4_fr = pd.read_excel('https://github.com/hamiltonrmat/skillquestapp/raw/refs/heads/main/edl_maths_skq.xlsx', sheet_name=tables_edl[10])
 exam4_fr = exam4_fr[['Clé', 'Note/20,00']]
 exam4_fr.columns = ['clé', 'note']
 exam4_fr = exam4_fr.groupby(['clé']).max().reset_index()
@@ -127,12 +127,12 @@ fr['validation'] = validations_fr
 ### Dérivées
 #############
 
-exam1_der = pd.read_excel('edl_maths_skq.xlsx', sheet_name=tables_edl[11])
+exam1_der = pd.read_excel('https://github.com/hamiltonrmat/skillquestapp/raw/refs/heads/main/edl_maths_skq.xlsx', sheet_name=tables_edl[11])
 exam1_der = exam1_der[['Clé', 'Note/20,00']]
 exam1_der.columns = ['clé', 'note']
 exam1_der = exam1_der.groupby(['clé']).max().reset_index()
 
-exam2_der = pd.read_excel('edl_maths_skq.xlsx', sheet_name=tables_edl[12])
+exam2_der = pd.read_excel('https://github.com/hamiltonrmat/skillquestapp/raw/refs/heads/main/edl_maths_skq.xlsx', sheet_name=tables_edl[12])
 exam2_der = exam2_der[['Clé', 'Note/20,00']]
 exam2_der.columns = ['clé', 'note']
 exam2_der = exam2_der.groupby(['clé']).max().reset_index()
