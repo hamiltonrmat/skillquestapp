@@ -156,7 +156,12 @@ exam6_fr = exam6_fr[['Clé', 'Note/20,00']]
 exam6_fr.columns = ['clé', 'note']
 exam6_fr = exam6_fr.groupby(['clé']).max().reset_index()
 
-liste_exams_FR = [exam1_fr, exam2_fr, exam3_fr, exam4_fr, exam5_fr, exam6_fr]
+exam7_fr = pd.read_excel(lien_resultats_fr, sheet_name=tables_resultats_fr[6])
+exam7_fr = exam7_fr[['Clé', 'Note/20,00']]
+exam7_fr.columns = ['clé', 'note']
+exam7_fr = exam7_fr.groupby(['clé']).max().reset_index()
+
+liste_exams_FR = [exam1_fr, exam2_fr, exam3_fr, exam4_fr, exam5_fr, exam6_fr, exam7_fr]
 
 for x in range(len(liste_exams_FR)):
     liste_exams_FR[x].columns = ['clé', 'note_fr_t'+str(x+1)]
