@@ -76,7 +76,12 @@ exam8_ml = exam8_ml[['Clé', 'Note/20,00']]
 exam8_ml.columns = ['clé', 'note']
 exam8_ml = exam8_ml.groupby(['clé']).max().reset_index()
 
-liste_exams_ML = [exam1_ml, exam2_ml, exam3_ml, exam4_ml, exam5_ml, exam6_ml, exam7_ml, exam8_ml]
+exam9_ml = pd.read_excel(lien_resultats_ml, sheet_name=tables_resultats_ml[8])
+exam9_ml = exam9_ml[['Clé', 'Note/20,00']]
+exam9_ml.columns = ['clé', 'note']
+exam9_ml = exam9_ml.groupby(['clé']).max().reset_index()
+
+liste_exams_ML = [exam1_ml, exam2_ml, exam3_ml, exam4_ml, exam5_ml, exam6_ml, exam7_ml, exam8_ml, exam9_ml]
 
 for x in range(len(liste_exams_ML)):
     liste_exams_ML[x].columns = ['clé', 'note_ml_t'+str(x+1)]
@@ -89,6 +94,7 @@ ml = ml.merge(exam5_ml, how='left', on='clé')
 ml = ml.merge(exam6_ml, how='left', on='clé')
 ml = ml.merge(exam7_ml, how='left', on='clé')
 ml = ml.merge(exam8_ml, how='left', on='clé')
+ml = ml.merge(exam9_ml, how='left', on='clé')
 
 ml['note_max'] = ml.max(axis='columns', numeric_only=True)
 
